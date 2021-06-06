@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator made by Jayesh Rathi</title>
+    <link rel="stylesheet" href="calculator.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container1">
+        <textarea name="screen" id="input" rows="1" placeholder="0"></textarea>
+        <button onclick="clearit()">Clear</button>
+      </div>
+      <hr />
+
+      <div class="container2">
+          <button class="but" onclick="square()">x^2</button>
+          <button class="but" onclick="inverse()">1/x</button>
+          <button class="but" onclick="squareRoot()">sqrt</button>
+          <button class="but" onclick="remove()">del</button>
+      </div>
+
+      <div class="container2">
+        <button class="btn" id="7" onclick="press(this.id)">7</button>
+        <button class="btn" id="8" onclick="press(this.id)">8</button>
+        <button class="btn" id="9" onclick="press(this.id)">9</button>
+        <button class="btn" id="*" onclick="press(this.id)">*</button>
+      </div>
+
+      <div class="container2">
+          <button class="btn" id="4" onclick="press(this.id)">4</button>
+          <button class="btn" id="5" onclick="press(this.id)">5</button>
+          <button class="btn" id="6" onclick="press(this.id)">6</button>
+          <button class="btn" id="-" onclick="press(this.id)">-</button>
+      </div>
+
+      <div class="container2">
+          <button class="btn" id="1" onclick="press(this.id)">1</button>
+          <button class="btn" id="2" onclick="press(this.id)">2</button>
+          <button class="btn" id="3" onclick="press(this.id)">3</button>
+          <button class="btn" id="+" onclick="press(this.id)">+</button>
+      </div>
+
+      <div class="container2">
+          <button class="btn" id="=" onclick="answer()">=</button>
+          <button class="btn" id="0" onclick="press(this.id)">0</button>
+          <button class="btn" id="." onclick="press(this.id)">.</button>
+          <button class="btn" id="/" onclick="press(this.id)">/</button>
+      </div>
+
+    </div>
+
+    <script src="calculator.js"></script>
+  </body>
+</html>
