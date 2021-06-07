@@ -13,7 +13,6 @@ function answer() {
     for (var iterator of input) {
         if (Number(iterator) || (iterator == '0') || (iterator == '.')) {
             a = a + iterator
-            console.log(a)
             continue
         } else if ((iterator == '+') || (iterator == '-') || (iterator == '/') || (iterator == '*')) {
             operators.push(iterator)
