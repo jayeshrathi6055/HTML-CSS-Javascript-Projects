@@ -15,7 +15,7 @@ function answer() {
             a = a + iterator
             console.log(a)
             continue
-        } else if ((iterator == '+' || (iterator == '-') || (iterator == '/') || (iterator == '*'))) {
+        } else if ((iterator == '+') || (iterator == '-') || (iterator == '/') || (iterator == '*')) {
             operators.push(iterator)
         } else {
             continue
