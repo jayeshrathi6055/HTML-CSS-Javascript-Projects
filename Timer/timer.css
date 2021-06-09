@@ -9,7 +9,6 @@ body{
 }
 
 .container{
-    /* border: 2px solid red; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,7 +17,6 @@ body{
 }
 
 .container1{
-    /* border: 2px solid blue; */
     display: flex;
     align-items: center;
 }
@@ -32,7 +30,7 @@ body{
 .container2 input{
     width: 33%;
     text-align: center;
-    color: blue;
+    color: white;
     background-color: black;
     padding-top: 3px;
     padding-bottom: 3px;
@@ -51,7 +49,6 @@ span{
 }
 
 .container3{
-    /* border: 2px solid green; */
     margin-top: 90px;
     display: flex;
     justify-content: center;
