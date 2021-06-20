@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #460046;
+}
+
+.heading{
+    margin:20px 0px;
+}
+
+.heading h1{
+    text-align: center;
+    font-size: 100px;
+    color: white;
+    text-decoration: underline;
+}
+
+.game{
+    /* border: 2px solid blue; */
+    display: grid;
+    grid-template-columns: 90px 90px 90px;
+    grid-template-rows: 90px 90px 90px;
+    justify-content: center;
+    padding: 10px 0px;
+}
+
+.box{
+    border: 2px solid white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 30px;    
+}
+
+.win{
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    margin-top: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+button{
+    color: white;
+    background-color: blue;
+    border-color: blue;
+    padding: 11px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.winMobile{
+    display: none;
+}
+
+
+@media screen and (max-width:530px) {
+    .heading h1{
+        font-size: 60px;
+    }
+}
+@media screen and (max-width:311px) {
+    .heading h1{
+        font-size: 40px;
+    }
+    .game{
+        grid-template-columns: 60px 60px 60px;
+        grid-template-rows: 80px 80px 80px;
+    }
+}
+@media screen and (max-width:290px) {
+    .win{
+        display: none;
+    }
+    .winMobile{
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        color: white;
+    margin-top: 30px;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+    .winMobile div{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+    }
+    button{
+        margin-top: 15px;
+    }
+}

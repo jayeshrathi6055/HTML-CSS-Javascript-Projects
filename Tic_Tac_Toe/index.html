@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe by Jayesh Rathi</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <!-- Game Heading -->
+    <div class="heading">
+      <h1>Tic Tac Toe</h1>
+    </div>
+
+    <div class="container">
+      <!-- Making Game -->
+      <div class="game">
+        <div class="box sameCol1 sameRow1 diagonal1"></div>
+        <div class="box sameCol2 sameRow1"></div>
+        <div class="box sameCol3 sameRow1 diagonal2"></div>
+        <div class="box sameCol1 sameRow2"></div>
+        <div class="box sameCol2 sameRow2 diagonal1 diagonal2"></div>
+        <div class="box sameCol3 sameRow2"></div>
+        <div class="box sameCol1 sameRow3 diagonal2"></div>
+        <div class="box sameCol2 sameRow3"></div>
+        <div class="box sameCol3 sameRow3 diagonal1"></div>
+      </div>
+      <!-- Adding Score -->
+      <div class="win">
+        <h3><span>Player 1 </span> : <span id = "win1">0</span></h3>
+        <button>Play Again</button>
+        <h3><span>Player 2</span> : <span id = "win2">0</span></h3>
+      </div>
+    </div>
+
+    <div class="winMobile">
+        <div>
+            <h3><span>Player 1 </span> : <span id = "win3">0</span></h3>
+            <h3><span>Player 2</span> : <span id = "win4">0</span></h3>
+        </div>
+        <button>Play Again</button>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
