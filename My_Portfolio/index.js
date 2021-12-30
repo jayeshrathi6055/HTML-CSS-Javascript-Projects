@@ -1,3 +1,4 @@
+// For About Me
 let aboutMe = document.getElementById("aboutMe");
 let len = aboutMe.innerText.length
 let skills = ['an Electrical Engineer', 'a Full Stack Developer']
@@ -34,3 +35,20 @@ let val = skills[index].slice(0,stirngIndex);
 stirngIndex++;
     return val;
 }
+
+// For Menubar
+let onClickLinks = document.getElementById("onClickLinks");
+let menubar = document.getElementById("menubar");
+menubar.addEventListener('click',()=>{
+    if(onClickLinks.style.visibility == "hidden"){
+        onClickLinks.style.visibility = "visible";
+    }else{
+        onClickLinks.style.visibility = "hidden";
+    }
+})
+menubar.addEventListener('mouseover',()=>{
+    onClickLinks.style.visibility = "visible"
+})
+onClickLinks.addEventListener('mouseleave',()=>{
+    onClickLinks.style.visibility = "hidden"
+})

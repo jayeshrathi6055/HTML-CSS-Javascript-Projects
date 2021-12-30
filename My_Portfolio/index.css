@@ -9,6 +9,7 @@ html {
   font-size: 62.5%;
 }
 
+/* Header Style */
 header {
   color: white;
   font-weight: bolder;
@@ -43,18 +44,18 @@ header {
   color: white;
   font-family: "Bebas Neue", cursive;
 }
-.header nav ul {
+#pageLinks {
   display: flex;
   list-style-type: none;
   align-items: center;
   padding: 0.5rem;
 }
-.header nav ul li {
+#pageLinks li {
   padding: 0.8rem 1.3rem;
   margin: 0rem 1rem;
   cursor: pointer;
 }
-.header nav ul li a {
+#pageLinks li a {
   color: white;
   text-decoration: none;
   transition: font-size 0.2s linear;
@@ -62,7 +63,7 @@ header {
   font-weight: bolder;
   font-family: "Bebas Neue", cursive;
 }
-.header nav ul li a:hover {
+#pageLinks li a:hover {
   color: orange;
   text-decoration: underline;
   font-size: 3.2rem;
@@ -117,7 +118,9 @@ header {
   margin-top: 3rem;
 }
 
-main,.section3 {
+/* Main Content Style */
+main,
+.section3 {
   margin-top: 5rem;
 }
 .main h2 {
@@ -126,12 +129,12 @@ main,.section3 {
 }
 .section1 {
   margin: 0rem 4rem;
-  background-color: rgb(228, 228, 228);
+  background-color: rgb(0, 207, 255);
   padding: 1rem;
 }
 .section1 h3 {
   font-size: 3rem;
-  color: white;
+  color: #0f07ff;
   margin: 1rem 0rem;
 }
 .skillName {
@@ -146,61 +149,111 @@ main,.section3 {
   margin-bottom: 1rem;
   position: relative;
 }
-.skillRange::before {
+.green::before{
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
+  width: 80%;
+  background-color: green;
+}
+.blue::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 70%;
+  background-color: blue;
+}
+.red::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background-color: red;
+}
+.yellow::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 65%;
+  background-color: yellow;
+}
+.purple::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 60%;
+  background-color: purple;
+}
+.indigo::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  background-color: indigo;
 }
 
-.textAboutMe{
+.textAboutMe {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
-.textAboutMe p{
+.textAboutMe p {
   font-size: 2rem;
   width: 80%;
   text-align: justify;
 }
-.textAboutMe img{
+.textAboutMe img {
   border-radius: 50%;
   width: auto;
   height: 19rem;
   margin-right: 2rem;
 }
 
-.section4{
-  background-color: rgb(26,26,26);
+.section4 {
+  background-color: rgb(26, 26, 26);
   padding-bottom: 0.5rem;
   color: white;
   margin: 0rem 1rem;
   border-radius: 1.5rem;
 }
-.section4 h2{
+.section4 h2 {
   background-color: white;
   color: black;
 }
-.contactMe{
+.contactMe {
   display: flex;
   font-size: 2rem;
   flex-direction: column;
   align-items: flex-start;
   width: 50%;
-margin: 2rem auto;
+  margin: 2rem auto;
 }
-.contactMe label{
+.contactMe label {
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
-.contactMe input{
+.contactMe input {
   width: 98%;
   font-size: 2rem;
   padding: 0.5rem;
 }
-.contactMe button{
+.contactMe textarea {
+  width: 98%;
+}
+.contactMe button {
   margin: auto;
   margin-top: 2rem;
   font-size: 1.7rem;
@@ -211,11 +264,12 @@ margin: 2rem auto;
   cursor: pointer;
   border-radius: 0.7rem;
 }
-.contactMe button:hover{
+.contactMe button:hover {
   background-color: #0d24fb;
 }
 
-footer{
+/* Footer Style */
+footer {
   background-color: black;
   color: white;
   display: flex;
@@ -224,14 +278,101 @@ footer{
   margin-top: 2rem;
   height: 8rem;
 }
-footer p{
+footer p {
   font-size: 2rem;
 }
-footer .socialMedia{
+footer .socialMedia {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-footer .socialMedia a img{
+footer .socialMedia a img {
   margin-top: 0;
+}
+
+
+/* Media query */
+@media screen and (max-width: 860px) {
+  html {
+    font-size: 50%;
+  }
+}
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 35%;
+  }
+}
+@media screen and (max-width: 460px) {
+  #pageLinks {
+    display: none;
+  }
+  #menubar{
+    display: block;
+  }
+  .textAboutMe{
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  .contactMe{
+    width: 85%;
+  }
+  footer{
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 420px) {
+  .header nav #onClickLinks{
+    width: 25%;
+    right: 3%;
+  }
+}
+@media screen and (max-width: 375px) {
+  html{
+    font-size: 30%;
+  }
+}
+@media screen and (max-width: 325px) {
+  html{
+    font-size: 25%;
+  }
+}
+
+
+/* For Responsive design */
+.menubar {
+  display: none;
+}
+#menubar span {
+  display: block;
+  width: 3rem;
+  height: 0.8rem;
+  background-color: white;
+  margin-bottom: 0.2rem;
+  cursor: pointer;
+}
+
+#onClickLinks {
+  border: 1px solid black;
+  width: 15%;
+  background-color: white;
+  list-style: none;
+  position: absolute;
+  top: 12%;
+  right: 10%;
+  visibility: hidden;
+}
+#onClickLinks li {
+  text-align: center;
+}
+#onClickLinks li a {
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 0.8rem;
+}
+#onClickLinks li a:hover {
+  color: white;
+  background-color: black;
 }
