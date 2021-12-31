@@ -1,54 +1,101 @@
 // For About Me
 let aboutMe = document.getElementById("aboutMe");
-let len = aboutMe.innerText.length
+let len = aboutMe.textContent.length
 let skills = ['an Electrical Engineer', 'a Full Stack Developer']
 let index = 0;
 let stirngIndex = 1;
 
-setInterval(()=>{
-    const strDecrement = setInterval(()=>{
-        len = aboutMe.innerText.length;
-        if(len==0){
+setInterval(() => {
+    const strDecrement = setInterval(() => {
+        len = aboutMe.textContent.length;
+        if (len == 0) {
             stirngIndex = 1;
             index++;
-            if(index == skills.length){
+            if (index == skills.length) {
                 index = 0;
             }
             clearInterval(strDecrement);
-        }else{
-            aboutMe.innerText = stirngDecrement(aboutMe.innerText);
+        } else {
+            aboutMe.textContent = stirngDecrement(aboutMe.textContent);
         }
-    },50);
-},4500);
+    }, 50);
+}, 4500);
 
-setInterval(()=>{
-    if(len==0){
-        aboutMe.innerText = stirngIncrement();
+setInterval(() => {
+    if (len == 0) {
+        aboutMe.textContent = stirngIncrement();
     }
-},40)
+}, 40)
 
 function stirngDecrement(text) {
     return text.slice(0, text.length - 1)
 }
 function stirngIncrement() {
-let val = skills[index].slice(0,stirngIndex);
-stirngIndex++;
+    let val = skills[index].slice(0, stirngIndex);
+    stirngIndex++;
     return val;
 }
 
 // For Menubar
 let onClickLinks = document.getElementById("onClickLinks");
 let menubar = document.getElementById("menubar");
-menubar.addEventListener('click',()=>{
-    if(onClickLinks.style.visibility == "hidden"){
-        onClickLinks.style.visibility = "visible";
-    }else{
-        onClickLinks.style.visibility = "hidden";
+check = false;
+menubar.addEventListener('click', () => {
+    if (!check) {
+        onClickLinks.style.visibility = "visible"
+        check = !check
+    } else {
+        onClickLinks.style.visibility = "hidden"
+        check = !check
     }
 })
-menubar.addEventListener('mouseover',()=>{
+menubar.addEventListener('mouseover', () => {
     onClickLinks.style.visibility = "visible"
 })
-onClickLinks.addEventListener('mouseleave',()=>{
+onClickLinks.addEventListener('mouseleave', () => {
     onClickLinks.style.visibility = "hidden"
+})
+
+
+// For authentication
+let contactMe = document.getElementById("contactMe");
+let fullname = document.getElementById('fullname');
+let yourEmail = document.getElementById('yourEmail');
+let yourPassword = document.getElementById('yourPassword');
+let projectDetails = document.getElementById("projectDetails");
+
+projectDetails.style.fontSize = "2rem";
+projectDetails.style.fontWeight = "bolder";
+
+fullname.addEventListener("blur",()=>{
+    if(fullname.value.length==0){
+        fullname.style.borderColor = "black";
+    }
+})
+yourPassword.addEventListener("blur",()=>{
+    if(yourPassword.value.length==0){
+        yourPassword.style.borderColor = "black";
+    }
+})
+
+contactMe.addEventListener('submit',()=>{
+    if(fullname.value.length>3){
+        fullname.style.borderColor = "green";
+    }else{
+        fullname.style.borderColor = "red";
+    }
+
+    if(yourPassword.value.length>5){
+        yourPassword.style.borderColor = "green";
+    }else{
+        yourPassword.style.borderColor = "red";
+    }
+
+    if(projectDetails.value.length==0){
+        projectDetails.style.borderColor = "red"
+    }else{
+        projectDetails.style.borderColor = "green"
+    }
+
+    event.preventDefault();
 })

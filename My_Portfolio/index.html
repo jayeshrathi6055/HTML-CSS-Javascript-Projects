@@ -101,16 +101,16 @@
 
         <section class="section4" id="section4">
           <h2>Contact Me</h2>
-          <form action="" method="post" class="contactMe">
+          <form method="post" class="contactMe" id="contactMe">
             <label for="name">Enter your Full Name</label>
-            <input type="text">
+            <input type="text" name="name" id="fullname" placeholder = "Your Full Name">
             <label for="email">Enter your Email</label>
-            <input type="email">
+            <input type="email" placeholder = "Your Email" name="email" id="yourEmail">
             <label for="password">Enter password</label>
-            <input type="password">
-            <label for="project">Discuss about any project</label>
-            <textarea name="aboutProject" id="project" rows="10" placeholder="Enter your project details so that I can contact you"></textarea>
-            <button type="submit">Submit</button>
+            <input type="password" placeholder = "Your Password" name="password" id="yourPassword">
+            <label for="project">Project Details</label>
+            <textarea name="project" id="projectDetails" rows="10" placeholder="Enter your project details"></textarea>
+            <button type="submit" id="submit">Submit</button>
           </form>
         </section>
       </article>
