@@ -67,35 +67,77 @@ let projectDetails = document.getElementById("projectDetails");
 projectDetails.style.fontSize = "2rem";
 projectDetails.style.fontWeight = "bolder";
 
-fullname.addEventListener("blur",()=>{
-    if(fullname.value.length==0){
+fullname.addEventListener("blur", () => {
+    if (fullname.value.length == 0) {
         fullname.style.borderColor = "black";
     }
 })
-yourPassword.addEventListener("blur",()=>{
-    if(yourPassword.value.length==0){
+yourPassword.addEventListener("blur", () => {
+    if (yourPassword.value.length == 0) {
         yourPassword.style.borderColor = "black";
     }
 })
 
-contactMe.addEventListener('submit',()=>{
-    if(fullname.value.length>3){
+function authentication() {
+    if (fullname.value.length > 3) {
         fullname.style.borderColor = "green";
-    }else{
+    } else {
         fullname.style.borderColor = "red";
+        return false;
     }
 
-    if(yourPassword.value.length>5){
+    if (yourPassword.value.length >= 5) {
         yourPassword.style.borderColor = "green";
-    }else{
+    } else {
         yourPassword.style.borderColor = "red";
+        return false;
     }
 
-    if(projectDetails.value.length==0){
+    if (projectDetails.value.length == 0) {
         projectDetails.style.borderColor = "red"
-    }else{
+        return false;
+    } else {
         projectDetails.style.borderColor = "green"
     }
 
+    return true;
+}
+
+contactMe.addEventListener('submit', (event) => {
+    if (authentication()) {
+        let url = 'http://localhost:8000/postProject'
+        let data = { name: fullname.value, email: yourEmail.value, password: yourPassword.value, projectDetails: projectDetails.value };
+        let params = {
+            method: 'post',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        };
+        fetch(url, params).then(response => response.json()).then(data => {
+            fullname.value = "";
+            yourEmail.value = "";
+            yourPassword.value = "";
+            projectDetails.value = "";
+            if (data) {
+                let alert = document.getElementById('alert1');
+                alert.style.display = "flex";
+                setTimeout(() => {
+                    closeAlert('alert1');
+                }, 5000);
+            } else {
+                alert = document.getElementById('alert2');
+                alert.style.display = "flex";
+                setTimeout(() => {
+                    closeAlert('alert2');
+                }, 5000);
+            }
+        }
+        );
+    }
     event.preventDefault();
 })
+
+// For Alert
+function closeAlert(id) {
+    let alert_id = document.getElementById(id);
+    alert_id.style.display = "none"
+}

@@ -214,6 +214,7 @@ main,
   font-size: 2rem;
   width: 80%;
   text-align: justify;
+  font-family: "Lobster", cursive;
 }
 .textAboutMe img {
   border-radius: 50%;
@@ -375,4 +376,38 @@ footer .socialMedia a img {
 #onClickLinks li a:hover {
   color: white;
   background-color: black;
+}
+
+/* For Alert */
+.success{
+  background-color: rgb(147, 236, 147);
+  display: none;
+}
+.success i:hover{
+  color: green;
+}
+.error{
+  background-color: rgb(248, 60, 60);
+  display: none;
+}
+.error i:hover{
+  color: rgb(207, 0, 0);
+}
+.main_alert{
+  padding: 1rem;
+  justify-content: space-between;
+  font-size: 2rem;
+  align-items: center;
+  margin: 1rem 1rem;
+}
+.alert_para{
+  font-size: 2rem;
+  color: black;
+}
+.main_alert i{
+  padding: 0.6rem;
+}
+.main_alert i:hover {
+  cursor: pointer;
+  border: 1px solid black;
 }
