@@ -133,6 +133,17 @@ contactMe.addEventListener('submit', (event) => {
         }
         );
     }
+    // This part is not recommended. Remove if backend in use
+    fullname.value = "";
+    yourEmail.value = "";
+    yourPassword.value = "";
+    projectDetails.value = "";
+    alert = document.getElementById('alert1');
+    alert.style.display = "flex";
+    setTimeout(() => {
+        closeAlert('alert1');
+    }, 5000);
+
     event.preventDefault();
 })
 
