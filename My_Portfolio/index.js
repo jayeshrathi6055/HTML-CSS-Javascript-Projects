@@ -61,7 +61,7 @@ onClickLinks.addEventListener('mouseleave', () => {
 let contactMe = document.getElementById("contactMe");
 let fullname = document.getElementById('fullname');
 let yourEmail = document.getElementById('yourEmail');
-let yourPassword = document.getElementById('yourPassword');
+// let yourPassword = document.getElementById('yourPassword');
 let projectDetails = document.getElementById("projectDetails");
 
 projectDetails.style.fontSize = "2rem";
@@ -72,11 +72,11 @@ fullname.addEventListener("blur", () => {
         fullname.style.borderColor = "black";
     }
 })
-yourPassword.addEventListener("blur", () => {
-    if (yourPassword.value.length == 0) {
-        yourPassword.style.borderColor = "black";
-    }
-})
+// yourPassword.addEventListener("blur", () => {
+//     if (yourPassword.value.length == 0) {
+//         yourPassword.style.borderColor = "black";
+//     }
+// })
 
 function authentication() {
     if (fullname.value.length > 3) {
@@ -86,18 +86,25 @@ function authentication() {
         return false;
     }
 
-    if (yourPassword.value.length >= 5) {
-        yourPassword.style.borderColor = "green";
-    } else {
-        yourPassword.style.borderColor = "red";
-        return false;
-    }
+    // if (yourPassword.value.length >= 5) {
+    //     yourPassword.style.borderColor = "green";
+    // } else {
+    //     yourPassword.style.borderColor = "red";
+    //     return false;
+    // }
 
-    if (projectDetails.value.length == 0) {
+    if (projectDetails.value.length <= 10) {
         projectDetails.style.borderColor = "red"
         return false;
     } else {
         projectDetails.style.borderColor = "green"
+    }
+
+    if (yourEmail.value.indexOf('@')>0 && yourEmail.value.indexOf('.')>0){
+        yourEmail.style.borderColor = 'green';
+    }else{
+        yourEmail.style.borderColor = 'red';
+        return false;
     }
 
     return true;
@@ -115,7 +122,7 @@ contactMe.addEventListener('submit', (event) => {
         fetch(url, params).then(response => response.json()).then(data => {
             fullname.value = "";
             yourEmail.value = "";
-            yourPassword.value = "";
+            // yourPassword.value = "";
             projectDetails.value = "";
             if (data) {
                 let alert = document.getElementById('alert1');
@@ -136,7 +143,7 @@ contactMe.addEventListener('submit', (event) => {
     // This part is not recommended. Remove if backend in use
     fullname.value = "";
     yourEmail.value = "";
-    yourPassword.value = "";
+    // yourPassword.value = "";
     projectDetails.value = "";
     alert = document.getElementById('alert1');
     alert.style.display = "flex";
