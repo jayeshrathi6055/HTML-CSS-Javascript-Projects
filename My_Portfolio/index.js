@@ -132,7 +132,7 @@ contactMe.addEventListener('submit', (event) => {
             }
         }
         );
-    }
+        
     // This part is not recommended. Remove if backend in use
     fullname.value = "";
     yourEmail.value = "";
@@ -143,6 +143,8 @@ contactMe.addEventListener('submit', (event) => {
     setTimeout(() => {
         closeAlert('alert1');
     }, 5000);
+
+    }
 
     event.preventDefault();
 })
