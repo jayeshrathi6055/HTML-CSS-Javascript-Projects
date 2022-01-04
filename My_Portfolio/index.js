@@ -113,7 +113,7 @@ function authentication() {
 contactMe.addEventListener('submit', (event) => {
     if (authentication()) {
         let url = 'http://localhost:8000/postProject'
-        let data = { name: fullname.value, email: yourEmail.value, password: yourPassword.value, projectDetails: projectDetails.value };
+        let data = { name: fullname.value, email: yourEmail.value, projectDetails: projectDetails.value };  // add ---> password: yourPassword.value,
         let params = {
             method: 'post',
             headers: { 'content-type': 'application/json' },
