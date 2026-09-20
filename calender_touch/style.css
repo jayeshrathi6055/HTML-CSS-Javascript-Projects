@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#month_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 2rem;
+}
+
+#calendar_container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr 9fr;
+    gap: 1rem;
+    border: 1px solid black;
+    margin: 0 2rem;
+    height: 80vh;
+}
+
+.box {
+    border-right: 1px solid red;
+    border-left: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#date_container {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 1rem;
+}
+
+.expense_added {
+    background-color: yellow;
+}
+
+#show_expense_popup {
+    position: absolute;
+    width: 30%;
+    height: 50%;
+    top: 25%;
+    left: 35%;
+    background-color: pink;
+    display: none;
+    flex-direction: column;
+}
+
+#current_date {
+    text-align: center;
+}
+
+#list_expenses {
+    display: flex;
+    flex-direction: column;
+}
+
+#list_expenses .expense_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+}
+
+#total_expense {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-weight: bolder;
+}

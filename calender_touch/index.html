@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./style.css">
+    <title>ToDo: Calender Style</title>
+</head>
+<body>
+<div id="month_container">
+    <button id="previous_button" onclick="previousMonth()">Previous</button>
+    <h3 class="day_name">Today's Day</h3>
+    <button id="next_button" onclick="nextMonth()">Next</button>
+</div>
+<div id="calendar_container">
+    <div class="box">S</div>
+    <div class="box">M</div>
+    <div class="box">T</div>
+    <div class="box">W</div>
+    <div class="box">T</div>
+    <div class="box">F</div>
+    <div class="box">S</div>
+    <div id="date_container"></div>
+
+    <div id="show_expense_popup">
+        <p id="current_date"></p>
+        <hr>
+        <form action="./" method="post" id="add_expense_form">
+            <input type="text" name="expense_name" id="expense_name" placeholder="Expense Name like Food"/>
+            <input type="number" name="expense_amount" id="expense_amount" placeholder="0"/>
+            <button type="submit">Add Expense</button>
+        </form>
+        <hr>
+        <div id="list_expenses"></div>
+        <hr>
+        <div id="total_expense">
+            <p>Total</p>
+            <p id="total_amount"></p>
+        </div>
+    </div>
+</div>
+
+
+<script src="./script.js"></script>
+</body>
+</html>

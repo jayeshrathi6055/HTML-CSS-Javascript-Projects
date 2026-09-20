@@ -1,0 +1,13 @@
+{
+  "2026_9_20": {
+    "expenses": {
+      "FOOD": {
+        "amount": 100
+      },
+      "TRAVEL": {
+        "amount": 90
+      }
+    },
+    "total": "190"
+  }
+}
